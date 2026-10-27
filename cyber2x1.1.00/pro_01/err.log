@@ -1,0 +1,22 @@
+docker: 'docker stop' requires at least 1 argument
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+See 'docker stop --help' for more information
+docker: 'docker rm' requires at least 1 argument
+
+Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+See 'docker rm --help' for more information
+time="2026-10-26T10:21:33+03:00" level=warning msg="/home/oalsmadi/professional_training/module02/cyber2x1.1.00/pro_01/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+time="2026-10-26T10:21:33+03:00" level=warning msg="/home/oalsmadi/professional_training/module02/cyber2x1.1.00/pro_01/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Image pro_01-flask_app Building 
+ Image pro_01-flask_app Built 
+ Network pro_01_default Creating 
+ Network pro_01_default Creating 
+ Network pro_01_default Created 
+ Network pro_01_default Created 
+ Container pro_01-flask_app-1 Creating 
+ Container pro_01-flask_app-1 Created 
+ Container pro_01-flask_app-1 Starting 
+ Container pro_01-flask_app-1 Started 

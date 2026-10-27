@@ -1,0 +1,72 @@
+import pickle
+
+import random
+
+
+# Generate random tabular data for our example
+
+tabular_data = [
+
+	{
+
+    	"id": i,
+
+    	"name": f"Item-{i}",
+
+    	"value": random.randint(1, 100),
+
+    	"category": random.choice(['A', 'B', 'C'])
+
+	}
+
+	for i in range(1, 6)
+
+]
+
+
+# Store the pickle data in a file named 'payload.pkl'
+
+# At this stage, payload.pkl would behave as expected with no potentially malicious side effects during deserialization.
+
+with open('payload.pkl', 'wb') as f:
+
+	pickle.dump(tabular_data, f)
+
+
+# Our class containing arbitrary code we want to execute:
+
+class Malicious:
+
+	def ____(self):
+
+    	# The following code will execute during deserialization
+
+    	return (print, ("Hello World! Only load pkl files from trusted sources!",))
+
+
+# Replace original data with malicious code
+
+malicious_payload = Malicious()
+
+
+# Store potentially malicious pickle data in the same file
+
+with open('payload.pkl', 'wb') as f:
+
+	pickle.dump([tabular_data, malicious_payload], f)
+
+
+# Load the pickle file to show potentially malicious side effects
+
+print("Loading the pickle file 'payload.pkl':")
+
+with open('payload.pkl', 'rb') as f:
+
+	data = pickle.load(f)
+
+
+# Verify the content of the loaded data
+
+print("\nLoaded data:")
+
+print(data)
